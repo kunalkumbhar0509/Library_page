@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The George Peabody Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #f9f9f9;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Back3.png'); /* Use a subtle pattern image */
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .search-container {
+            margin-top: 10px;
+        }
+
+        .search-container input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+
+        nav {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 5px 10px;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .hero img {
+            max-width: 100%;
+            margin-right: 40px;
+            flex: 1 1 300px;
+        }
+
+        .hero .content {
+            max-width: 100%;
+            flex: 1 1 300px;
+        }
+
+        .hero .content h2 {
+            margin: 0 0 10px;
+        }
+
+        .level-up {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .articles {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .article {
+            flex: 1 1 300px;
+            padding: 10px;
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            margin-right: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 300px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
+
+        .gallery-text {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #4caf50;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .articles {
+                flex-direction: column;
+            }
+
+            .gallery-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .gallery-item {
+                width: 100%;
+                max-width: 400px;
+                margin-bottom: 20px;
+            }
+
+            footer {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The George Peabody Library</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search the catalog...">
+            <button>Search</button>
+        </div>
+    </header>
+    <nav>
+        <div>
+            <a href="#">Books & More</a>
+            <a href="#">Services</a>
+            <a href="#">Events</a>
+        </div>
+        <div>
+            <a href="#">Contact Us</a>
+            <a href="#">Help</a>
+            <a href="#">Log In / Sign Up</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <img src="Library.jpeg" alt="Library">
+        <div class="content">
+            <h2>The George Peabody Library</h2>
+            <p>One of the most beautiful libraries in Maryland is John Hopkins’ George Peabody Library. 
+                Located in the world-renowned Peabody Institute of Music in Baltimore, Maryland, the Peabody is the 19th-century research library of Johns Hopkins University's Sheridan Libraries Special Collections.
+                The library’s magnificent settings have made it one of the city’s most popular venues for weddings and events.</p>
+            <button>Learn More</button>
+        </div>
+    </div>
+
+    <h1>Best Sellers</h1>
+    <div class="gallery-container" id="gallery">
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Aai.jpg');"></div>
+            <div class="gallery-text">Shyam Chi Aai</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Zombi.jpg');"></div>
+            <div class="gallery-text">Zombi</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Shellby.jpg');"></div>
+            <div class="gallery-text">Frankenstein -By Mary shelley</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Partition.jpg');"></div>
+            <div class="gallery-text">Pakistan Or the Partition of India</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Savarkar.jpg');"></div>
+            <div class="gallery-text">The Indian War of Independence 1857</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Aai.jpg');"></div>
+            <div class="gallery-text">Shyam Chi Aai</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Zombi.jpg');"></div>
+            <div class="gallery-text">Zombi</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Shellby.jpg');"></div>
+            <div class="gallery-text">Frankenstein -By Mary shelley</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Partition.jpg');"></div>
+            <div class="gallery-text">Pakistan Or the Partition of India</div>
+        </div>
+        <div class="gallery-item">
+            <div class="gallery-image" style="background-image: url('Savarkar.jpg');"></div>
+            <div class="gallery-text">The Indian War of Independence 1857</div>
+        </div>
+    </div>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        const scrollSpeed = 6; // Increase this value to increase scrolling speed
+
+        gallery.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            gallery.scrollLeft += event.deltaY * scrollSpeed;
+        });
+    </script>
+
+    <div class="level-up">
+        <h2>Level Up with your library card</h2>
+        <p>Unlock an expansion pack of tools and services to boost your energy, improve your odds, and reboot your life.</p>
+        <button>Learn More</button>
+    </div>
+
+    <div class="articles">
+        <div class="article">
+            <img src="Same.jpg" alt="New Website">
+            <h4>Same Library, New Website</h4>
+        </div>
+        <div class="article">
+            <img src="Get.jpg" alt="Westerville's Potluck">
+            <h4>Get free access to books, magazines, newspapers & study tools</h4>
+        </div>
+        <div class="article">
+            <img src="publish.png" alt="Tax Forms">
+            <h4>Publish your article and books.</h4>
+        </div>
+    </div>
+    <p>&copy; 2024 George Peabody Library</p>
+    <footer>
+        <p>&copy; 2024 George Peabody Library</p>
+    </footer>
+</body>
+</html>
